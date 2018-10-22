@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 
     connection.connect(function(err) {
         if (err) throw err;
-        connection.query("SELECT izena FROM kalea ORDER BY izena", function (err, result, fields) {
+        connection.query("SELECT izena,google FROM kalea ORDER BY izena", function (err, result, fields) {
             if (err) throw err;
             res.json(result);
         });
